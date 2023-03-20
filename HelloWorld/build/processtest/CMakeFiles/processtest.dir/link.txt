@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprocesstest.a CMakeFiles/processtest.dir/src/ProcessTest.cpp.o
+/usr/bin/ranlib libprocesstest.a

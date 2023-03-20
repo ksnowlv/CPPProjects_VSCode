@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build",
+  "command": "/usr/bin/clang++  -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/inc -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/$(CMAKE_CURRENT_SOURCE_DIR) -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/processtest/inc -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -std=gnu++14 -o CMakeFiles/HELLOWORLD.dir/src/AtomicTest.cpp.o -c /Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/src/AtomicTest.cpp",
+  "file": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/src/AtomicTest.cpp"
+},
+{
+  "directory": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build",
+  "command": "/usr/bin/clang++  -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/inc -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/$(CMAKE_CURRENT_SOURCE_DIR) -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/processtest/inc -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -std=gnu++14 -o CMakeFiles/HELLOWORLD.dir/src/Person.cpp.o -c /Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/src/Person.cpp",
+  "file": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/src/Person.cpp"
+},
+{
+  "directory": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build",
+  "command": "/usr/bin/clang++  -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/inc -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/$(CMAKE_CURRENT_SOURCE_DIR) -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/processtest/inc -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -std=gnu++14 -o CMakeFiles/HELLOWORLD.dir/main.cpp.o -c /Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/main.cpp",
+  "file": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/main.cpp"
+},
+{
+  "directory": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build/processtest",
+  "command": "/usr/bin/clang++  -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/inc -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/$(CMAKE_CURRENT_SOURCE_DIR) -I/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/processtest/inc -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -std=gnu++14 -o CMakeFiles/processtest.dir/src/ProcessTest.cpp.o -c /Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/processtest/src/ProcessTest.cpp",
+  "file": "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/processtest/src/ProcessTest.cpp"
+}
+]

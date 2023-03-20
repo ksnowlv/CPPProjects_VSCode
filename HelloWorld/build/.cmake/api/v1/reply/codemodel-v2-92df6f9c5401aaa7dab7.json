@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "processtest",
+					"jsonFile" : "directory-processtest-Debug-8b86862438f47d65a5dd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "processtest",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "HELLOWORLD",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "HELLOWORLD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HELLOWORLD-Debug-42ad23dae29530b5dcc5.json",
+					"name" : "HELLOWORLD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "processtest::@e841d08e18ba1525ea2c",
+					"jsonFile" : "target-processtest-Debug-0a94f0dc0b879501245e.json",
+					"name" : "processtest",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build",
+		"source" : "/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
