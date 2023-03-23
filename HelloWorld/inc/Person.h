@@ -1,5 +1,5 @@
-#ifndef A0FE61F0_7E82_44B9_8079_3526C9A17D35
-#define A0FE61F0_7E82_44B9_8079_3526C9A17D35
+#ifndef PERSON_H
+#define PERSON_H
 
 #include <string>
 using namespace std;
@@ -11,22 +11,22 @@ public:
     ~Person();
 
 public:
-    inline const std::string &getName() const {
+    inline const std::string &GetName() const {
         return m_name;
     }
-    inline void setName(const std::string &name) {
+    inline void SetName(const std::string &name) {
         m_name = name;
     }
 
-    inline constexpr int getAge() const {
+    inline constexpr int GetAge() const {
         return m_age;
     }
 
-    inline void setAge(const int age) {
+    inline void SetAge(const int age) {
         m_age = age;
     }
 
-    void showInfomation() const;
+    void ShowInfomation() const;
 
 
 private:
@@ -35,4 +35,4 @@ private:
     string m_address;
 };
 
-#endif /* A0FE61F0_7E82_44B9_8079_3526C9A17D35 */
+#endif /* PERSON_H */

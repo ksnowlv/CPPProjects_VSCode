@@ -16,12 +16,21 @@ using namespace std;
 
 auto g_value = 11;
 
-void ProcessTest::testProcess() {
+ProcessTest::ProcessTest() {
+
+}
+
+ProcessTest::~ProcessTest() {
+    
+}
+
+
+void ProcessTest::Test() {
     // processCreate();
     // signalTest();
     // alarmTest();
     // sharedMemoryTest();
-    messageQueueTest();
+    //MessageQueueTest();
 }
 
 /**
@@ -35,7 +44,7 @@ fork() 比较特别，因为它会返回两次，也就是说会有两个返回�
 将PID为1的进程（init）作为自己的父进程，由init进程接管。
  * 
  */
-void ProcessTest::processCreate() {
+void ProcessTest::ProcessCreate() {
 
     auto localValue = 10;
 
@@ -81,10 +90,10 @@ void ProcessTest::processCreate() {
     }
 }
 
-void ProcessTest::signalTest() {
+void ProcessTest::SignalTest() {
 
     cout<<"--------signal test-----"<<endl;
-    signal(SIGINT, ProcessTest::ouch);
+    signal(SIGINT, ProcessTest::Ouch);
 
     int count = 0;
     while (++count > 5) {
@@ -92,14 +101,14 @@ void ProcessTest::signalTest() {
         sleep(2);
     }
 }
-void ProcessTest::ouch(const int sig) {
-    cout<<"ouch! i got signal:"<<sig<<endl;
+void ProcessTest::Ouch(const int sig) {
+    cout<<"O! i got signal:"<<sig<<endl;
 }
 
 // alarm
 int ProcessTest::s_AlarmFired = 0;
 
-void ProcessTest::alarmTest() {
+void ProcessTest::AlarmTest() {
     cout<<"---alarm application start---"<<endl;
     pid_t pid = fork();
     pid_t childPid;
@@ -115,18 +124,18 @@ void ProcessTest::alarmTest() {
 
     //cout<<"alarm_fired:"<<alarm_fired<<",pid:"<<getpid()<<endl;
 
-    signal(SIGALRM, ProcessTest::alarmCallBack);
+    signal(SIGALRM, ProcessTest::AlarmCallBack);
     pause();
     if (ProcessTest::s_AlarmFired > 0){
         cout<<"alarm Call Back"<<endl;
     }
 }
 
-void ProcessTest::alarmCallBack(const int sig) {
+void ProcessTest::AlarmCallBack(const int sig) {
     ProcessTest::s_AlarmFired = 1;
 }
 
-void ProcessTest::sharedMemoryTest() {
+void ProcessTest::SharedMemoryTest() {
     cout<<__func__<<endl;
     const int sharedMemorySize = 1024;
     const int keyId = 256;
@@ -178,7 +187,7 @@ struct MsgBuf
     char m_data[256];
 };
 
-void ProcessTest::messageQueueTest() {
+void ProcessTest::MessageQueueTest() {
     sleep(2);
     cout<<"----"<<__func__<<endl;
     const int sharedMemorySize = 1024;
@@ -206,6 +215,7 @@ void ProcessTest::messageQueueTest() {
             <<",msgId:"<<msgId<<endl;
         //将一块共享内存映射到调用进程的数据段中
 
+        int count = 0;
         struct MsgBuf msgBuf;
         while (true) {
             msgBuf.m_Type = msgType;
@@ -219,6 +229,11 @@ void ProcessTest::messageQueueTest() {
                 return;
             }
             sleep(2);
+
+            if (++count > 10)
+            {
+                break;
+            }
         }
         
      

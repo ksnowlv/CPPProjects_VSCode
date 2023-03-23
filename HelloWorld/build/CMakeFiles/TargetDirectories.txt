@@ -1,6 +1,0 @@
-/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build/CMakeFiles/rebuild_cache.dir
-/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build/CMakeFiles/edit_cache.dir
-/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build/CMakeFiles/HELLOWORLD.dir
-/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build/processtest/CMakeFiles/rebuild_cache.dir
-/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build/processtest/CMakeFiles/edit_cache.dir
-/Users/ksnowlv/Music/CPPProjects/CPPProjects_VSCode/HelloWorld/build/processtest/CMakeFiles/processtest.dir

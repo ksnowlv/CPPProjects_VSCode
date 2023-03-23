@@ -10,9 +10,9 @@ atomic_int64_t g_total(0);
 //非原子操作，多线程下数据会出现不一致的情况
 // int64_t g_total = 0;
 
-atomic_flag g_flag_lock(ATOMIC_FLAG_INIT);
+atomic_flag g_flag_lock = ATOMIC_FLAG_INIT;
 
-void AtomicTest::threadFunction(const string &name, const int num) {
+void AtomicTest::ThreadFunction(const string &name, const int num) {
 
     for (int i = 1; i <=num; ++i) {
         g_total += i;
@@ -20,13 +20,13 @@ void AtomicTest::threadFunction(const string &name, const int num) {
     cout<<"thread name:"<<name<<",g_total="<<g_total<<endl;
 }
 
-void AtomicTest::testAtomicInt64() {
+void AtomicTest::TestAtomicInt64() {
 
     const int64_t num = 10000;  
     //atomic_int64_t g_total=150015000  
-    thread t1(AtomicTest::threadFunction, "t1",num);
-    thread t2(AtomicTest::threadFunction, "t2",num);
-    thread t3(AtomicTest::threadFunction, "t3",num);
+    thread t1(AtomicTest::ThreadFunction, "t1",num);
+    thread t2(AtomicTest::ThreadFunction, "t2",num);
+    thread t3(AtomicTest::ThreadFunction, "t3",num);
 
     t1.join();
     t2.join();
@@ -35,15 +35,20 @@ void AtomicTest::testAtomicInt64() {
     cout<<"g_total="<<g_total<<endl;
 }
 
-void AtomicTest::setAtomicFlag() {
+void AtomicTest::Test() {
+    TestAtomicInt64();
+    TestAtomicIntFlag();
+}
+
+void AtomicTest::SetAtomicFlag() {
 
     while (g_flag_lock.test_and_set(memory_order_acquire)) {
-        cout<<"setAtomicFlag"<<endl;
+        cout<<"SetAtomicFlag"<<endl;
     }
     cout<<"func1 do somethings!"<<endl;
 }
 
-void AtomicTest::clearAtomicFlag() {
+void AtomicTest::ClearAtomicFlag() {
 
     g_flag_lock.clear();
     cout<<"clearAtomicFlag "<<endl;
@@ -59,12 +64,12 @@ atomic_flag 只支持 test_and_set() 以及 clear() 两个成员函数，test_an
 clear()函数清除 std::atomic_flag 标志使得下一次调用 std::atomic_flag::test_and_set()返回 false。
 可以用 atomic_flag 的成员函数test_and_set() 和 clear() 来实现一个自旋锁（spin lock）：
 */
-void AtomicTest::testAtomicIntFlag() {
+void AtomicTest::TestAtomicIntFlag() {
 
     g_flag_lock.test_and_set();
-    thread t1(AtomicTest::setAtomicFlag);
+    thread t1(AtomicTest::SetAtomicFlag);
     usleep(2);
-    thread t2(AtomicTest::clearAtomicFlag);
+    thread t2(AtomicTest::ClearAtomicFlag);
     
     t1.join();
     t2.join();

@@ -1,32 +1,34 @@
-#ifndef D9FDDF7B_00D1_4C84_AC26_34B2CB22D311
-#define D9FDDF7B_00D1_4C84_AC26_34B2CB22D311
+#ifndef PROCESS_TEST_H
+#define PROCESS_TEST_H
 
 
-class ProcessTest {
+#include "BaseTest.h"
+
+
+class ProcessTest: public BaseTest {
 
 public:
-    ProcessTest() = default;
-    ~ProcessTest() = default;
+    ProcessTest();
+    ~ProcessTest();
 
 public:
-    void testProcess();
+    void Test() override;
 
 private:
-    void processCreate();
-
-    void signalTest();
-    static void ouch(const int sig);
+    void ProcessCreate();
+    void SignalTest();
+    static void Ouch(const int sig);
     
-    void alarmTest();
-    static void alarmCallBack(const int sig);
+    void AlarmTest();
+    static void AlarmCallBack(const int sig);
     
-    void sharedMemoryTest();
+    void SharedMemoryTest();
 
-    void messageQueueTest();
+    void MessageQueueTest();
 
 private:
     static int s_AlarmFired;
 
 };
 
-#endif /* D9FDDF7B_00D1_4C84_AC26_34B2CB22D311 */
+#endif /* PROCESS_TEST_H */

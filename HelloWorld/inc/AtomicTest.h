@@ -4,21 +4,25 @@
 #include <string>
 using namespace std;
 
-class AtomicTest {
+#include "BaseTest.h"
+
+class AtomicTest: public BaseTest  {
 
 public:
-    AtomicTest() =default;
+    AtomicTest() = default;
     ~AtomicTest() = default;
 
-
 public:
-    void testAtomicInt64();
-    void testAtomicIntFlag();
+    void Test() override;
 
-public:
-    static void threadFunction(const string &name, const int num);
-    static void setAtomicFlag();
-    static void clearAtomicFlag();
+private:
+    void TestAtomicInt64();
+    void TestAtomicIntFlag();
+
+private:
+    static void ThreadFunction(const string &name, const int num);
+    static void SetAtomicFlag();
+    static void ClearAtomicFlag();
 
 };
 
