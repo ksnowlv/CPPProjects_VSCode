@@ -40,7 +40,6 @@ void FutureTest::TestAsync() {
     
     future_status status;
     while (true) {
-        
           status = result.wait_for(chrono::seconds(1));
         
           if (status == future_status::deferred) {

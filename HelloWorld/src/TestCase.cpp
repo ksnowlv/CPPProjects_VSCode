@@ -7,6 +7,7 @@
 #include <memory>
 #include <utility>
 #include "FutureTest.h"
+#include "MutexTest.h"
 
 
 TestCase::TestCase() {
@@ -41,4 +42,7 @@ void TestCase::Init() {
 
     unique_ptr<FutureTest> futureTest(make_unique<FutureTest>());
     m_vector.emplace_back(move(futureTest));
+
+    unique_ptr<MutexTest> mutexTest(make_unique<MutexTest>());
+    m_vector.emplace_back(move(mutexTest));
 }
