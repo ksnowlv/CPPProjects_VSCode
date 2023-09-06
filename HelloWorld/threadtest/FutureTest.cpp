@@ -5,6 +5,7 @@
 #include <string>
 #include <thread>
 #include <unistd.h>
+#include <utility>
 
 FutureTest::FutureTest()
 {
@@ -67,15 +68,15 @@ void FutureTest::TestPackagedTask() {
     future<int> result = task.get_future();
     task(1,2);
     cout<<"task result:"<< result.get()<<endl;
-
-    
      //重置共享状态
     task.reset();
     result = task.get_future();
     //通过线程启动任务，异步启动
-    thread td(move(task), 2, 3);
-    td.join();
+    thread td(std::move(task),2,3);
+
     cout << "task result:" << result.get() <<endl;
+
+    td.join();
 
     //
     packaged_task<int (int, int)> newTask([](int a, int b) {
