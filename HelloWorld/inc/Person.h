@@ -7,6 +7,7 @@ using namespace std;
 class Person {
 public:
     Person();
+    Person(const int age);
     Person(const Person& person) = default;
     ~Person();
 
@@ -27,7 +28,6 @@ public:
     }
 
     void ShowInfomation() const;
-
 
 private:
     string m_name;

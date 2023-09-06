@@ -1,6 +1,7 @@
 #ifndef PERSONTEST_H
 #define PERSONTEST_H
 
+#include "Person.h"
 #pragma once
 
 #include "BaseTest.h"

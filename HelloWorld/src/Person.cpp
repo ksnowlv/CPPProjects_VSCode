@@ -5,6 +5,10 @@ Person::Person() {
     m_age = 0;
 }
 
+Person::Person(const int age) {
+    m_age = age;
+}
+
 Person::~Person() {
 
 }
