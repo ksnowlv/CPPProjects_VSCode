@@ -35,6 +35,9 @@ private:
     void TestTimeMutex();
     static void TimeMutextTask(MutexTest& t, const int threadid);
 
+    void TestTwoLock();
+    void TestLockGuard();
+
 private:
 
     mutex m_Lock;

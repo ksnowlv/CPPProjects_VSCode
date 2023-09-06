@@ -19,6 +19,8 @@ void MutexTest::Test() {
     TestMutex();
     TestRecursiveMutex();
     TestTimeMutex();
+    TestTwoLock();
+    TestLockGuard();
 }
 
 void MutexTest::TestMutex() {
@@ -82,3 +84,42 @@ void MutexTest::TimeMutextTask(MutexTest& t, const int threadid) {
 如果读取操作的开销非常大，并且您可以并行处理许多操作，那么在某些时候增加读写比率应该会导致读取/写入器性能优于排他锁的情况。断点在哪里取决于实际工作量。
 
 */
+
+
+void MutexTest::TestTwoLock() {
+
+    mutex mx1;
+    mutex mx2;
+    //std::try_lock支持尝试对多个互斥量进行锁定，尝试锁定成功返回-1，
+    //否则返回锁定失败的互斥量的位置，例如第一个锁定失败返回0、第二个失败返回1
+    if (-1 == try_lock(mx1, mx2)) {
+        cout<<"lock success"<<endl;
+        mx1.unlock();
+        mx2.unlock();
+    }
+}
+
+//std::lock_guard自动释放锁，它是一个模板类，模板类型可以是以上的四种锁，用于自动锁定解锁，
+//直到对象作用域结束。其原理是：声明一个局部的lock_guard对象，在其构造函数中进行加锁，
+//在其析构函数中进行解锁。最终的结果就是：在定义该局部对象的时候加锁（调用构造函数），出了该对象作用域的时候解锁（调用析构函数）
+
+void MutexTest::TestLockGuard() {
+    mutex m;
+    {
+        lock_guard<mutex> lockGuard(m);
+        if (m.try_lock()){
+            cout<<"TestLockGuard:锁成功!!!"<<endl;
+        } else {
+            cout<<"TestLockGuard:锁被占用!!!"<<endl;
+        }
+    }
+    
+    cout<<"mutex超过作用域名后"<<endl;
+    if (m.try_lock()){
+        cout<<"TestLockGuard:锁成功!!!"<<endl;
+    } else {
+        cout<<"TestLockGuard:锁被占用!!!"<<endl;
+    }
+
+
+}
