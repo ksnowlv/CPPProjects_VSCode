@@ -20,6 +20,10 @@ void AtomicTest::ThreadFunction(const string &name, const int num) {
     cout<<"thread name:"<<name<<",g_total="<<g_total<<endl;
 }
 
+AtomicTest::~AtomicTest() {
+    std::cout << "~AtomicTest" << std::endl;
+}
+
 void AtomicTest::TestAtomicInt64() {
 
     const int64_t num = 10000;  

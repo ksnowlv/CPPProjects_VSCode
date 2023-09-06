@@ -10,7 +10,7 @@ class AtomicTest: public BaseTest  {
 
 public:
     AtomicTest() = default;
-    ~AtomicTest() = default;
+    ~AtomicTest();
 
 public:
     void Test() override;
@@ -23,7 +23,6 @@ private:
     static void ThreadFunction(const string &name, const int num);
     static void SetAtomicFlag();
     static void ClearAtomicFlag();
-
 };
 
 #endif /* C71500F9_F5A5_4D88_A3B8_15D7F814724E */
